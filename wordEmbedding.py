@@ -27,7 +27,7 @@ def write_to_csv(row):
 
 
 #get data for the model 
-data = pandas.read_csv("unclassifiedData.csv", usecols=['description'])
+data = pandas.read_csv("./data/unclassifiedOriginal.csv", usecols=['description'])
 updated_data = []
 for row in data.to_numpy():
   sentence = row[0].lower().replace(",",'').split()

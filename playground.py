@@ -8,7 +8,7 @@ from sklearn.neural_network import MLPClassifier
 # TODO LIST
 # Add neural net model - DONE
 # add date -- didn't improve 
-# add embedded word vectors 
+# add embedded word vectors - ALMOST DONE 
 # add synthetic data 
 
 
@@ -22,10 +22,7 @@ unclassifiedData = pandas.read_csv("./data/unclassifiedCleaned.csv", sep=",")
 # train model on classified data
 
 # only get the numerical data from what was read
-data = data._get_numeric_data()
-print data
-
-
+X = data._get_numeric_data()
 y = classifiedCategory.values.flatten()
 
 
