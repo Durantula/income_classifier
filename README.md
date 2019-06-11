@@ -1,19 +1,17 @@
-# income_classifier
-Final Year Project for UniMelb Masters
+# UniMelb Final Year Engineering Code 
 
-Author: Matthew Duran 
 
-INCOME CLASSIFICATION 
+## Income Classifier 
 
-How to run? 
+### How to run? 
 
 1. Navigate to root directory
 1. Type into your command prompt `python income_classifier.py`
 1. The results of script will be stored in the root directory as "output.csv"
 
-WORD EMBEDDING 
+## Word embedding calculator 
 
-How to run? 
+### How to run? 
 
 Note: you will need to download the word2vec model first as indicated in NOTE 2 below and store it in the folder /model
 
@@ -22,7 +20,7 @@ Note: you will need to download the word2vec model first as indicated in NOTE 2 
 1. The output will be printed to word_data.csv in the root directory
 
 
-Additional notes on the repository
+## Additional notes on the repository
 
 1. Both initial and final results of the algorithms can be accessed in the csv file “Income Classification Results.csv”. A income transaction is classified as 1 and other transaction types are classified as 0. 
 1. The pretrained GoogleNews-vectors-negative300.bin.gz model has been excluded from submission of documents due to it’s large size. The file is 1.5gb. To implement the word embedding script you will need to clone the following git repository that contains the file https://github.com/mmihaltz/word2vec-GoogleNews-vectors. Once accessed, extract and add the model to the /model directory. 
