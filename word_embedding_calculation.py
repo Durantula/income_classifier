@@ -2,6 +2,7 @@ import numpy as np
 import pandas
 # from gensim.models import Word2Vec
 import gensim
+import csv
 
 
 # Load Google's pre-trained Word2Vec model.
@@ -21,20 +22,21 @@ def average_sentence_vector(sentence):
       avg_sentence_vector.append(word_vector)
   return np.mean(avg_sentence_vector)
 
-def write_to_csv(row): 
-  with open('foo.csv', 'wb') as abc:
-    np.savetxt(abc, row, delimiter=",", fmt='%s')
+def write_to_csv(data): 
+  with open('word_data.csv', 'w') as csvFile:
+    writer = csv.writer(csvFile)
+    writer.writerows(data)
+  csvFile.close()
 
 
 #get data for the model 
-data = pandas.read_csv("./data/unclassifiedOriginal.csv", usecols=['description'])
+data = pandas.read_csv("./data/original_misc.csv", usecols=['amount','description'])
 updated_data = []
-for row in data.to_numpy():
-  sentence = row[0].lower().replace(",",'').split()
+for row in data.values:
+  sentence = row[1].lower().replace("-", " ").split()
   sentence_vec = average_sentence_vector(sentence)
-  row[0] = row[0].replace(",","")
   row = np.append(row, sentence_vec)
-  updated_data.append(row)
+  updated_data.append([row[0],row[1],row[2],row[3]])
 
 write_to_csv(updated_data)
   
